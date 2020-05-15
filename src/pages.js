@@ -10,7 +10,7 @@ const directories = []
 function walkDir(dir, parrent = '') {
     const files = fs.readdirSync(dir)
     for(let x in files){
-        const next = path.join(dir,files[x]);
+        let next = path.join(dir,files[x]);
         if(fs.lstatSync(next).isDirectory()==true){
             walkDir(next, parrent+'/'+files[x]);
         }else{
