@@ -8,9 +8,9 @@ const NunjucksWebpackPlugin = require('nunjucks-webpack-plugin');
 
 const directories = []
 function walkDir(dir, parrent = '') {
-    var files = fs.readdirSync(dir)
-    for(var x in files){
-        var next = path.join(dir,files[x]);
+    const files = fs.readdirSync(dir)
+    for(let x in files){
+        const next = path.join(dir,files[x]);
         if(fs.lstatSync(next).isDirectory()==true){
             walkDir(next, parrent+'/'+files[x]);
         }else{
